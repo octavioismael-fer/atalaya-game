@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://j4fjamfwbr47"]
+
+[ext_resource type="Script" uid="uid://c1nrmkjwt8pxd" path="res://Scripts/box.gd" id="1_hdacx"]
+[ext_resource type="Texture2D" uid="uid://wthxil7wf085" path="res://Images/Caja_madera.png" id="2_ky0eu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6w44e"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6w44e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wssyu"]
+size = Vector2(28, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjge4"]
+size = Vector2(22, 22)
+
+[node name="RigidBody2D4" type="RigidBody2D" unique_id=603259417]
+physics_material_override = SubResource("PhysicsMaterial_6w44e")
+inertia = 5.0
+lock_rotation = true
+linear_damp = 3.0
+script = ExtResource("1_hdacx")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=2123446819]
+position = Vector2(40, 2)
+scale = Vector2(22.5, 22.5)
+mesh = SubResource("QuadMesh_6w44e")
+texture = ExtResource("2_ky0eu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=876186308]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1254105909]
+position = Vector2(40, 0.5)
+shape = SubResource("RectangleShape2D_wssyu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=794340371]
+position = Vector2(40, 2)
+shape = SubResource("RectangleShape2D_qjge4")

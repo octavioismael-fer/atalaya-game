@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c5gj27rpf72tu"]
+
+[ext_resource type="Script" uid="uid://bwxq73itcmevh" path="res://Scripts/options.gd" id="1_5r7rd"]
+[ext_resource type="Texture2D" uid="uid://dngxdsg83h3a8" path="res://Images/Fondo_test_menu.jpg" id="2_btsos"]
+
+[node name="Options" type="Control" unique_id=1109310070]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5r7rd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=374666986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.33479035, 0.51661026, 0.2834579, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=2056860865]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_btsos")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1236107597]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -98.0
+offset_right = 165.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Volumen" type="Button" parent="ColorRect/VBoxContainer" unique_id=1328256981]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "VOLUMEN"
+
+[node name="Resolucion" type="Button" parent="ColorRect/VBoxContainer" unique_id=156874576]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "RESOLUCION"
+
+[node name="Atras" type="Button" parent="ColorRect/VBoxContainer" unique_id=1470882488]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "ATRAS"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Volumen" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Resolucion" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Atras" to="." method="_on_atras_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Atras" to="." method="_on_quit_pressed"]

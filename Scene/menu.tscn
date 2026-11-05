@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://to8lkfgwqyg1"]
+
+[ext_resource type="Script" uid="uid://clsu3j6k18fc" path="res://Scripts/menu.gd" id="1_eas8t"]
+[ext_resource type="Texture2D" uid="uid://dngxdsg83h3a8" path="res://Images/Fondo_test_menu.jpg" id="2_u2k45"]
+
+[node name="Menu" type="Control" unique_id=1109310070]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eas8t")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=374666986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.33479035, 0.51661026, 0.2834579, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=2056860865]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u2k45")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1236107597]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -98.0
+offset_right = 165.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Play" type="Button" parent="ColorRect/VBoxContainer" unique_id=1328256981]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "JUGAR"
+
+[node name="Options" type="Button" parent="ColorRect/VBoxContainer" unique_id=156874576]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "OPCIONES"
+
+[node name="Quit" type="Button" parent="ColorRect/VBoxContainer" unique_id=1470882488]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "SALIR"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
