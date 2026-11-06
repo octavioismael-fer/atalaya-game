@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clsu3j6k18fc" path="res://Scripts/menu.gd" id="1_eas8t"]
 [ext_resource type="Texture2D" uid="uid://dngxdsg83h3a8" path="res://Images/Fondo_test_menu.jpg" id="2_u2k45"]
+[ext_resource type="AudioStream" uid="uid://c0r47loqsanhi" path="res://Audio assets/Main Theme primera maqueta.wav" id="3_u2k45"]
 
 [node name="Menu" type="Control" unique_id=1109310070]
 layout_mode = 3
@@ -60,6 +61,10 @@ text = "OPCIONES"
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "SALIR"
+
+[node name="Main theme" type="AudioStreamPlayer" parent="." unique_id=1940041824]
+stream = ExtResource("3_u2k45")
+autoplay = true
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Options" to="." method="_on_options_pressed"]

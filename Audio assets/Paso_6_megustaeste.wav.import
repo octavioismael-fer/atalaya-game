@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://kof8eqlwihh2"
+path="res://.godot/imported/Paso_6_megustaeste.wav-27facd4e24c945e20fb8bbb88d9e6a85.sample"
+
+[deps]
+
+source_file="res://Audio assets/Paso_6_megustaeste.wav"
+dest_files=["res://.godot/imported/Paso_6_megustaeste.wav-27facd4e24c945e20fb8bbb88d9e6a85.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

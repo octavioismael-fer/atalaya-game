@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b51k8xv7hxbug" path="res://Scene/character_body_2d.tscn" id="1_mhtsl"]
 [ext_resource type="PackedScene" uid="uid://j4fjamfwbr47" path="res://Scene/box.tscn" id="2_w51g1"]
+[ext_resource type="AudioStream" uid="uid://bqcpb1lfrb8ln" path="res://Audio assets/Ambiente_prueba_1.wav" id="3_4jv7b"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_b8cor"]
 
@@ -69,3 +70,7 @@ position = Vector2(148, -30)
 
 [node name="RigidBody2D7" parent="." unique_id=1303495456 instance=ExtResource("2_w51g1")]
 position = Vector2(246, -11)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1871137800]
+stream = ExtResource("3_4jv7b")
+autoplay = true

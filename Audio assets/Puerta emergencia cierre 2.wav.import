@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci04ruyk50d3n"
+path="res://.godot/imported/Puerta emergencia cierre 2.wav-7d26a3ab32d6839bd0574f3242c16c77.sample"
+
+[deps]
+
+source_file="res://Audio assets/Puerta emergencia cierre 2.wav"
+dest_files=["res://.godot/imported/Puerta emergencia cierre 2.wav-7d26a3ab32d6839bd0574f3242c16c77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

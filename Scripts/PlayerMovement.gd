@@ -91,3 +91,10 @@ func animations(direction):
 			animationPlayer.play("Jump")
 		elif velocity.y > 0:
 			animationPlayer.play("Fall")
+
+#Esto lo escribio Emma, eliminar luego de integrar Wwise
+func Sonido_pasos ():
+	$Pasos.play()
+func Sonido_salto ():
+	$Salto.play()
+	

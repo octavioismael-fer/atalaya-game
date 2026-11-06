@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://6osrkil2w220" path="res://Images/Free Cat Character Animations/4_Cat_Fall-Sheet.png" id="4_lqudw"]
 [ext_resource type="Texture2D" uid="uid://5kme58hkdn4s" path="res://Images/Free Cat Character Animations/3_Cat_Jump-Sheet.png" id="5_2tmjp"]
 [ext_resource type="Texture2D" uid="uid://bb2jpngi5mxps" path="res://Images/Free Cat Character Animations/2_Cat_Run-Sheet.png" id="6_8864c"]
+[ext_resource type="AudioStream" uid="uid://clumkuj1i2h4x" path="res://Audio assets/Paso_1.wav" id="8_8864c"]
+[ext_resource type="AudioStream" uid="uid://dhkjs2bxy20nv" path="res://Audio assets/Paso_2.wav" id="9_s1dva"]
+[ext_resource type="AudioStream" uid="uid://bkhkfctoxoklf" path="res://Audio assets/Paso_3.wav" id="10_a0lph"]
+[ext_resource type="AudioStream" uid="uid://kof8eqlwihh2" path="res://Audio assets/Paso_6_megustaeste.wav" id="11_t8cxg"]
+[ext_resource type="AudioStream" uid="uid://ci04ruyk50d3n" path="res://Audio assets/Puerta emergencia cierre 2.wav" id="12_s1dva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w44e"]
 size = Vector2(9, 17)
@@ -49,6 +54,17 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_sagxc"]
@@ -171,9 +187,23 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Sonido_salto"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_c6b8m"]
-length = 0.001
+length = 0.033333335
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -205,10 +235,21 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-0.3),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_0ka5k"]
@@ -251,6 +292,29 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.5, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"Sonido_pasos"
+}, {
+"args": [],
+"method": &"Sonido_pasos"
+}, {
+"args": [],
+"method": &"Sonido_pasos"
+}, {
+"args": [],
+"method": &"Sonido_pasos"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ha7wd"]
 _data = {
@@ -264,6 +328,13 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xr7yb"]
 size = Vector2(40, 38)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n0d8b"]
+streams_count = 4
+stream_0/stream = ExtResource("8_8864c")
+stream_1/stream = ExtResource("9_s1dva")
+stream_2/stream = ExtResource("10_a0lph")
+stream_3/stream = ExtResource("11_t8cxg")
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=888358760]
 script = ExtResource("1_pp4s8")
@@ -289,3 +360,9 @@ libraries/ = SubResource("AnimationLibrary_ha7wd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=924664226]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_xr7yb")
+
+[node name="Pasos" type="AudioStreamPlayer" parent="." unique_id=183368713]
+stream = SubResource("AudioStreamRandomizer_n0d8b")
+
+[node name="Salto" type="AudioStreamPlayer" parent="." unique_id=595163539]
+stream = ExtResource("12_s1dva")
