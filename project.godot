@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TEST_MENU"
-run/main_scene="uid://b51k8xv7hxbug"
+run/main_scene="uid://to8lkfgwqyg1"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
