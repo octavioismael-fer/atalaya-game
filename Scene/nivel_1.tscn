@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bol27r0wr4fta" path="res://Scene/Goal.tscn" id="4_0fn0l"]
 [ext_resource type="PackedScene" uid="uid://0bb8784t58pt" path="res://Scene/checkpoint.tscn" id="5_eh52p"]
 [ext_resource type="PackedScene" uid="uid://hqrawb7owtqm" path="res://Scene/collectible.tscn" id="6_1oatl"]
+[ext_resource type="PackedScene" uid="uid://dddjqvw2e26hs" path="res://Scene/hud.tscn" id="7_ort0u"]
+[ext_resource type="PackedScene" uid="uid://5nx0un4t5f4e" path="res://Scene/pause_menu.tscn" id="8_pukqk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh52p"]
 texture = ExtResource("1_3q6er")
@@ -389,3 +391,7 @@ position = Vector2(1111, -312)
 
 [node name="Collectible3" parent="." unique_id=788971475 instance=ExtResource("6_1oatl")]
 position = Vector2(1806, -224)
+
+[node name="Hud" parent="." unique_id=885038952 instance=ExtResource("7_ort0u")]
+
+[node name="PauseMenu" parent="." unique_id=480824363 instance=ExtResource("8_pukqk")]

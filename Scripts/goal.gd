@@ -1,11 +1,13 @@
 extends Area2D
+# La meta (punto B). Cuando el gato la toca, le avisa al GameManager para ver si terminó el nivel.
 
 
 func _ready() -> void:
-		body_entered.connect(_on_body_entered)
+	# Cuando algo entra al área, se llama a _on_body_entered.
+	body_entered.connect(_on_body_entered)
 
 
+# Si el que entró es el gato, intentamos terminar el nivel (el GameManager chequea los objetos).
 func _on_body_entered(body: Node2D) -> void:
-	print("Entró: ", body.name, " | grupos: ", body.get_groups())
 	if body.is_in_group("player"):
 		GameManager.level_completed()
