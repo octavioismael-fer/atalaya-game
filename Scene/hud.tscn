@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dddjqvw2e26hs"]
+
+[ext_resource type="Script" uid="uid://bb8crujq3wa0o" path="res://Scripts/hud.gd" id="1_cevek"]
+
+[node name="Hud" type="CanvasLayer" unique_id=885038952]
+script = ExtResource("1_cevek")
+
+[node name="CollectiblesLabel" type="Label" parent="." unique_id=823323843]
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 79.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 32
+text = "0/3"

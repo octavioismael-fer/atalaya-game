@@ -1,5 +1,6 @@
 extends Node
 
+signal collectibles_changed(count: int, total: int)
 const MENU_SCENE := "res://Scene/menu.tscn"
 var has_checkpoint := false
 var checkpoint_position := Vector2.ZERO
@@ -10,13 +11,14 @@ var collected_at_checkpoint: Array[String] = []
 func collect(id: String) -> void:
 	if id not in collected:
 		collected.append(id)
-	print("Objetos: ", collected.size(), "/", REQUIRED_COLLECTIBLES)
+	collectibles_changed.emit(collected.size(), REQUIRED_COLLECTIBLES)
 
 func has_all_collectibles() -> bool:
 	return collected.size() >= REQUIRED_COLLECTIBLES
 
 func reset_collectibles() -> void:
 	collected.clear()
+	collectibles_changed.emit(collected.size(), REQUIRED_COLLECTIBLES)
 		
 func set_checkpoint(pos: Vector2) -> void:
 	has_checkpoint = true
@@ -41,6 +43,7 @@ func level_completed() -> void:
 
 func restart_level() -> void:
 	collected = collected_at_checkpoint.duplicate()
+	collectibles_changed.emit(collected.size(), REQUIRED_COLLECTIBLES)
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 	
