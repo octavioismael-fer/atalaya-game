@@ -345,7 +345,7 @@ hframes = 8
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=477190938]
 offset = Vector2(0, -35)
-zoom = Vector2(5, 5)
+zoom = Vector2(3, 3)
 script = ExtResource("3_hnm5t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1040821010]
