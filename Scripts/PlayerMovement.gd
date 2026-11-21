@@ -15,6 +15,14 @@ var grabbed_box: RigidBody2D = null
 var jump_count = 0 
 var is_double_jumping = false
 
+func _ready() -> void:
+	if GameManager.has_checkpoint:
+		global_position = GameManager.checkpoint_position
+	else:
+		var spawn := get_tree().get_first_node_in_group("spawn")
+		if spawn:
+			global_position = spawn.global_position
+
 func set_nearby_box(box: RigidBody2D) -> void:
 	nearby_box = box
 

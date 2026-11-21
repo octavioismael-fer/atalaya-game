@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://hqrawb7owtqm"]
+
+[ext_resource type="Texture2D" uid="uid://be8toyl56m0uu" path="res://Images/Assets/Sprites/golden-coin-medal.png" id="1_cnxhp"]
+[ext_resource type="Script" uid="uid://b0uqlokheyy1a" path="res://Scripts/collectible.gd" id="1_yuyid"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6w44e"]
+radius = 14.0
+
+[node name="Collectible" type="Area2D" unique_id=786844346]
+script = ExtResource("1_yuyid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1799346752]
+shape = SubResource("CircleShape2D_6w44e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1366257546]
+texture = ExtResource("1_cnxhp")

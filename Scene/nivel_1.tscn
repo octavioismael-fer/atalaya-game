@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dfdtr63kvyblu" path="res://Images/Assets/Tilesets/LEVEL_1_WALLS_TILESET.png" id="1_3q6er"]
 [ext_resource type="Texture2D" uid="uid://bqbw1lshyxn50" path="res://Images/Assets/Tilesets/LEVEL_1_BASE_TILESET.png" id="1_7n6uk"]
 [ext_resource type="PackedScene" uid="uid://b51k8xv7hxbug" path="res://Scene/character_body_2d.tscn" id="3_0fn0l"]
+[ext_resource type="PackedScene" uid="uid://bol27r0wr4fta" path="res://Scene/Goal.tscn" id="4_0fn0l"]
+[ext_resource type="PackedScene" uid="uid://0bb8784t58pt" path="res://Scene/checkpoint.tscn" id="5_eh52p"]
+[ext_resource type="PackedScene" uid="uid://hqrawb7owtqm" path="res://Scene/collectible.tscn" id="6_1oatl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh52p"]
 texture = ExtResource("1_3q6er")
@@ -354,7 +357,7 @@ texture = ExtResource("1_7n6uk")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_stdmf")
 
-[node name="Nivel_1" type="Node2D" unique_id=248571312]
+[node name="Nivel_1" type="Node2D" unique_id=248571312 groups=["level"]]
 
 [node name="TilemapLayers" type="Node2D" parent="." unique_id=662100924]
 
@@ -368,3 +371,21 @@ tile_set = SubResource("TileSet_wssyu")
 
 [node name="CharacterBody2D" parent="." unique_id=888358760 instance=ExtResource("3_0fn0l")]
 position = Vector2(37, -32)
+
+[node name="Goal" parent="." unique_id=1813046054 instance=ExtResource("4_0fn0l")]
+position = Vector2(1982, -48)
+
+[node name="Spawnpoint" type="Marker2D" parent="." unique_id=1614778060 groups=["spawn"]]
+position = Vector2(36, -30)
+
+[node name="Checkpoint" parent="." unique_id=1778679383 instance=ExtResource("5_eh52p")]
+position = Vector2(1503, -366)
+
+[node name="Collectible" parent="." unique_id=786844346 instance=ExtResource("6_1oatl")]
+position = Vector2(432, -209)
+
+[node name="Collectible2" parent="." unique_id=1861084082 instance=ExtResource("6_1oatl")]
+position = Vector2(1111, -312)
+
+[node name="Collectible3" parent="." unique_id=788971475 instance=ExtResource("6_1oatl")]
+position = Vector2(1806, -224)
