@@ -12,6 +12,7 @@ var anchor_y := 0.0   # Nivel "normal" de la cámara
 var target_y := 0.0
 
 func _ready() -> void:
+	await player.ready
 	top_level = true
 	global_position = player.global_position
 	anchor_y = player.global_position.y

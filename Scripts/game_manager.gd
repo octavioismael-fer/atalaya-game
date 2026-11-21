@@ -1,16 +1,46 @@
 extends Node
 
 const MENU_SCENE := "res://Scene/menu.tscn"
+var has_checkpoint := false
+var checkpoint_position := Vector2.ZERO
+const REQUIRED_COLLECTIBLES := 3
+var collected: Array[String] = []
+var collected_at_checkpoint: Array[String] = []
 
+func collect(id: String) -> void:
+	if id not in collected:
+		collected.append(id)
+	print("Objetos: ", collected.size(), "/", REQUIRED_COLLECTIBLES)
+
+func has_all_collectibles() -> bool:
+	return collected.size() >= REQUIRED_COLLECTIBLES
+
+func reset_collectibles() -> void:
+	collected.clear()
+		
+func set_checkpoint(pos: Vector2) -> void:
+	has_checkpoint = true
+	checkpoint_position = pos
+	collected_at_checkpoint = collected.duplicate()
+
+func clear_checkpoint() -> void:
+	has_checkpoint = false
+	collected_at_checkpoint.clear()
+	
+func is_collected(id: String) -> bool:
+	return id in collected
 
 func _ready() -> void:
 		process_mode = Node.PROCESS_MODE_ALWAYS
 		
 func level_completed() -> void:
-	# Más adelante: solo terminar si se juntaron los 3 objetos
+	if not has_all_collectibles():
+		print("Te faltan objetos: ", collected.size(), "/", REQUIRED_COLLECTIBLES)
+		return
 	go_to_menu()
 
 func restart_level() -> void:
+	collected = collected_at_checkpoint.duplicate()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 	
@@ -35,5 +65,7 @@ func is_in_level() -> bool:
 
 
 func go_to_menu() -> void:
-		get_tree().paused = false
-		get_tree().change_scene_to_file(MENU_SCENE)
+	clear_checkpoint()
+	reset_collectibles()
+	get_tree().paused = false
+	get_tree().change_scene_to_file(MENU_SCENE)
