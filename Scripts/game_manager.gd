@@ -1,6 +1,7 @@
 extends Node
 
 signal collectibles_changed(count: int, total: int)
+signal pause_changed(paused: bool)
 const MENU_SCENE := "res://Scene/menu.tscn"
 var has_checkpoint := false
 var checkpoint_position := Vector2.ZERO
@@ -49,6 +50,7 @@ func restart_level() -> void:
 	
 func toggle_pause() -> void:
 	get_tree().paused = not get_tree().paused
+	pause_changed.emit(get_tree().paused)
 
 func _unhandled_input(event: InputEvent) -> void:
 		if not is_in_level():
