@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://caf6y21hous4e"
-path="res://.godot/imported/LEVEL_1_PLAYER_BASE.png-cc271b21a2b3bdc7467e804883dd2720.ctex"
+path="res://.godot/imported/LEVEL_1_PLAYER_BASE.png-b0d877bd29ae6678e8a3470c48ccdb11.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://Images/Assets/Sprites/LEVEL_1_PLAYER_BASE.png"
-dest_files=["res://.godot/imported/LEVEL_1_PLAYER_BASE.png-cc271b21a2b3bdc7467e804883dd2720.ctex"]
+dest_files=["res://.godot/imported/LEVEL_1_PLAYER_BASE.png-b0d877bd29ae6678e8a3470c48ccdb11.ctex"]
 
 [params]
 
