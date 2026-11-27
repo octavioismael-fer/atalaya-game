@@ -14,5 +14,8 @@ func _ready() -> void:
 # Si lo toca el gato: se anota en el GameManager y el objeto se borra de la escena.
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		$Sonido_moneda.playing = true #Escrito por Emma momentaneamente
 		GameManager.collect(name)
+		await get_tree().create_timer(0.2).timeout #perdon! sigo con problemas
+		# con Wwise, por eso meto mano aca! 
 		queue_free()

@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dlv0rew4qyupq" path="res://Audio assets/Paso_5.wav" id="8_8864c"]
 [ext_resource type="AudioStream" uid="uid://brg5xpcded55n" path="res://Audio assets/Paso_4.wav" id="9_s1dva"]
 [ext_resource type="AudioStream" uid="uid://cspfnfq3txnu0" path="res://Audio assets/Paso_7.wav" id="10_a0lph"]
-[ext_resource type="AudioStream" uid="uid://ci04ruyk50d3n" path="res://Audio assets/Puerta emergencia cierre 2.wav" id="12_s1dva"]
+[ext_resource type="AudioStream" uid="uid://b0uay037ttokn" path="res://Audio assets/Salto.wav" id="11_8864c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w44e"]
 size = Vector2(9, 17)
@@ -365,4 +365,4 @@ shape = SubResource("RectangleShape2D_xr7yb")
 stream = SubResource("AudioStreamRandomizer_n0d8b")
 
 [node name="Salto" type="AudioStreamPlayer" parent="." unique_id=595163539]
-stream = ExtResource("12_s1dva")
+stream = ExtResource("11_8864c")

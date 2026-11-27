@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://be8toyl56m0uu" path="res://Images/Assets/Sprites/golden-coin-medal.png" id="1_cnxhp"]
 [ext_resource type="Script" uid="uid://b0uqlokheyy1a" path="res://Scripts/collectible.gd" id="1_yuyid"]
+[ext_resource type="AudioStream" uid="uid://cvd2nbhi33tdw" path="res://Audio assets/golpe_metalico.wav" id="3_e854x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6w44e"]
 radius = 14.0
@@ -14,3 +15,7 @@ shape = SubResource("CircleShape2D_6w44e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1366257546]
 texture = ExtResource("1_cnxhp")
+
+[node name="Sonido_moneda" type="AudioStreamPlayer" parent="." unique_id=1801743834]
+stream = ExtResource("3_e854x")
+volume_db = -21.527
